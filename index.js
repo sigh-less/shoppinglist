@@ -1,4 +1,4 @@
-// This is the add item to list function
+/* This is the add item to list function missing buttons
 $("#js-shopping-list-form").on('submit', function(e){
     //prevents form submission
     e.preventDefault();
@@ -8,9 +8,9 @@ $("#js-shopping-list-form").on('submit', function(e){
     $(".shopping-list").append('<li><span class="shopping-item">'+new_item+'</span></li>');
     //clears the input field
     $('#shopping-list-entry').val("");
-});
+}); */
 
-/* This is the add item to list function -- THIS ADDS BUTTONS BUT THEY DO NOT WORK
+// This is the add item to list function
 $("#js-shopping-list-form").on('submit', function(e){
     //prevents form submission
     e.preventDefault();
@@ -20,14 +20,14 @@ $("#js-shopping-list-form").on('submit', function(e){
     $(".shopping-list").append('<li><span class="shopping-item">'+new_item+'</span><div class="shopping-item-controls"><button class="shopping-item-toggle"><span class="button-label">check</span></button><button class="shopping-item-delete"><span class="button-label">delete</span></button></div></li>');
     //clears the input field
     $('#shopping-list-entry').val("");
-}); */
+});
 
 // this function toggles if an item is checked or not
-$('.shopping-item-toggle').on('click', function(e){
+$('.shopping-list').on('click', '.shopping-item-toggle', function(e){
     $(e.target).closest("li").find(".shopping-item").toggleClass("shopping-item__checked");
 });
 
 // this is the "delete" functionality button
-$('.shopping-item-delete').on('click', function(){
+$('.shopping-list').on('click', '.shopping-item-delete', function(){
     $(this).closest("li").remove();
 });
